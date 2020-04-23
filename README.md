@@ -5,9 +5,6 @@ Research professor, Systems Engineer with Emphasis on Telecommunications, Specia
 <<<<<<< Updated upstream
 
 # Contact 
-=======
-#Contact  
->>>>>>> Stashed changes
 Email: luis.castellanosg@usantoto.edu.co
 #
 Facebook: https://www.facebook.com/luis.fernando.castellanos.g/
