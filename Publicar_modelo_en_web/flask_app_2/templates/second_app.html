@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>USTA -Second app</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+{% from "_formhelpers.html" import render_field %}
+
+<div>USTA - Faculty: systems engineering</div>
+<div>What's your name?</div>
+<form method=post action="/hello">
+	<table>
+		<tr>
+			<td>
+			  {{ render_field(form.sayhello) }}
+			</td>
+			<td>
+			  <input type=submit value='Say Hello' name='submit_btn'>
+			</td>
+		</tr>
+	</table>
+
+</form>
+  </body>
+</html>

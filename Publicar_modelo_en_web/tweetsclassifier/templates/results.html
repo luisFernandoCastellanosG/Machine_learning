@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <title>clasificador de sentimientos Tweet</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+<h3>El tweet:</h3>
+<div>"{{ content }}"</div>
+
+<h3>Predicción:</h3>
+<div>El tweet se clasificó como <strong>{{ prediction }}</strong>
+	 (con una probabilidad de: {{ probability }}%).</div>
+<hr>
+
+	<form action="/thanks" method="post">
+	  	¿La clasificación fue correcta?
+	  	<input type=submit value='Aprobado' name='feedback_button'>
+	  	<input type=hidden value='{{ prediction }}' name='prediction'>
+		<input type=hidden value='{{ content }}' name='tweet'>
+	</form>
+	<br>De lo contrario seleccione la opción correcta del sentimiento del tweet<br>
+	<form action="/thanks" method="post">
+		<input type=submit value='Sin sentimientos' name='feedback_button'><br>
+		<input type=hidden value='Sin sentimiento' name='prediction'>
+		<input type=hidden value='{{ content }}' name='tweet'>
+	</form>	
+	<form action="/thanks" method="post">
+		<input type=submit value='Sentimientos neutros' name='feedback_button'><br>
+		<input type=hidden value='Neutro' name='prediction'>
+		<input type=hidden value='{{ content }}' name='tweet'>
+	</form>	
+	<form action="/thanks" method="post">
+		<input type=submit value='Sentimientos positivos' name='feedback_button'><br>
+		<input type=hidden value='Positivo' name='prediction'>
+		<input type=hidden value='{{ content }}' name='tweet'>
+	</form>	
+	<form action="/thanks" method="post">
+		<input type=submit value='Sentimientos negativos' name='feedback_button'><br>
+		<input type=hidden value='Negativo' name='prediction'>
+		<input type=hidden value='{{ content }}' name='tweet'>
+	</form>	
+
+<hr>
+
+<form action="/">
+   <input type=submit value='Evaluar otro tweet'>
+</form>
+
+</body>
+</html>

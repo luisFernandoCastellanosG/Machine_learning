@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>clasificador de sentimientos Tweet </title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+<h2>Ingrese el tweet (español) para evaluar el sentimiento:</h2>
+<h3>Sin sentimiento, neutro, positivo, negativo</h3>
+
+{% from "_formhelpers.html" import render_field %}
+
+<form method=post action="/results">
+  <dl>
+	{{ render_field(form.tweet, cols='30', rows='10') }}
+  </dl>
+  <div>
+	  <input type=submit value='Evaluar tweet' name='submit_btn'>
+  </div>
+</form>
+
+<div id='sqlite'>
+    <form method=post action="/sqliteReport">
+      <input type=submit value='Reporte de clasificaciones'>
+    </form>
+</div>
+
+  </body>
+</html>
