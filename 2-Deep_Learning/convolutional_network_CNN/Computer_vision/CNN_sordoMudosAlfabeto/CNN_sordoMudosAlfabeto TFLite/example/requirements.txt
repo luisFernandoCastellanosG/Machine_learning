@@ -14,4 +14,4 @@ https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-linux_x
 https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_x86_64.whl; sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.7'
 https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp38-cp38-linux_x86_64.whl; sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.8'
 # for other linux/raspberry pi, please see the link above to find the right version for your OS
-numpy==1.19.5
+numpy==1.21.0
