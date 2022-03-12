@@ -1,4 +1,4 @@
-pillow==9.0.0
+pillow==9.0.1
 # TF Lite runtime packages based on OS and python version: https://www.tensorflow.org/lite/guide/python#install_just_the_tensorflow_lite_interpreter
 # windows
 https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp35-cp35m-win_amd64.whl; sys_platform == 'win32' and python_version == '3.5'
