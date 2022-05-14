@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>clasificador de sentimientos para textos en español</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+  <body>
+
+<h3>Muchas gracias por su retroalimentación!</h3>
+
+<div id='button'>
+	  <form action="/">
+	    <input type=submit class="btn btn-success" value='Evaluar otro texto'>
+	  </form>
+</div>
+<hr>
+<div id='sqliteReport'>
+	  	<form method=post action="/sqliteReport">
+      		<input type=submit  class="btn btn-info" value='Reporte de clasificaciones de usuarios'>
+    	</form>
+</div>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+  </body>
+</html>

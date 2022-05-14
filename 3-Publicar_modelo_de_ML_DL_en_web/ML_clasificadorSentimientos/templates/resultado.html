@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>clasificador de sentimientos para textos en español</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+  <body>
+    <div class="container-fluid">
+        <br><br>
+        <h2 text-center><strong>Resultados</strong> del clasificador de sentimientos (positivos/negativos) en español</h2>
+        <h3>El modelo utilizado fue Machine Learning classic (regresión logistica)</h3>
+        <hr>
+        <h3>El texto:</h3>
+        <div>"{{ content }}"</div>
+
+        <h3>Predicción:</h3>
+        <div>El texto se clasificó como <strong>{{ prediction }}</strong></div>
+        <hr>
+        <form action="/gracias" method="post">
+    	  	¿La clasificación fue correcta?
+    	  	<input type=submit value='Aprobado' name='feedback_button'>
+    	  	<input type=hidden value='{{ prediction }}' name='prediction'>
+    		<input type=hidden value='{{ content }}' name='texto'>
+    	</form>
+    	<br>De lo contrario seleccione la opción correcta del sentimiento<br>
+    	<form action="/gracias" method="post">
+    		<input type=submit value='Sentimientos positivos' name='feedback_button'><br>
+    		<input type=hidden value='Positivo' name='prediction'>
+    		<input type=hidden value='{{ content }}' name='texto'>
+    	</form>
+    	<form action="/gracias" method="post">
+    		<input type=submit value='Sentimientos negativos' name='feedback_button'><br>
+    		<input type=hidden value='Negativo' name='prediction'>
+    		<input type=hidden value='{{ content }}' name='texto'>
+    	</form>
+
+        <hr>
+
+        <form action="/">
+           <input type=submit class="btn btn-primary" value='Evaluar otro texto'>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+</body>
+</html>
